@@ -1,0 +1,4 @@
+# This file ensures the data directory is tracked by Git
+# Place your MNIST dataset files here:
+# - train.csv
+# - test.csv
