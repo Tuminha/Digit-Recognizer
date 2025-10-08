@@ -48,7 +48,7 @@
 - [x] Set up project structure and environment
 - [x] Load and explore MNIST dataset
 - [x] Preprocess data for neural network training
-- [ ] Implement basic neural network from scratch
+- [x] Implement basic neural network from scratch
 - [ ] Train first model and achieve baseline accuracy
 - [ ] Optimize hyperparameters and improve performance
 - [ ] Submit predictions to Kaggle competition
@@ -126,15 +126,24 @@ jupyter notebook notebooks/digit_recognizer.ipynb
 
 </details>
 
-### Phase 4: Neural Network Implementation 🔄
+### Phase 4: Neural Network Implementation ✅
 <details>
 <summary><strong>Details</strong></summary>
 
-- [ ] Implement basic MLP from scratch
-- [ ] Add forward propagation
-- [ ] Implement backpropagation
-- [ ] Add activation functions (ReLU, Softmax)
-- [ ] Create loss function (Cross-entropy)
+- [x] Implement basic MLP (Multi-Layer Perceptron) architecture
+- [x] Define DigitClassifier class inheriting from nn.Module
+- [x] Add three fully connected layers (784→128→64→10)
+- [x] Implement forward propagation with ReLU activations
+- [x] Initialize model and move to device (CPU)
+- [x] Define CrossEntropyLoss function
+- [x] Configure Adam optimizer (lr=0.001)
+
+**Architecture:**
+- Input Layer: 784 neurons (28×28 pixels)
+- Hidden Layer 1: 128 neurons + ReLU
+- Hidden Layer 2: 64 neurons + ReLU
+- Output Layer: 10 neurons (digits 0-9)
+- Total Parameters: ~101,770
 
 </details>
 
