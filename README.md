@@ -47,6 +47,7 @@
 ### 🏆 Key Achievements
 - [x] Set up project structure and environment
 - [x] Load and explore MNIST dataset
+- [x] Preprocess data for neural network training
 - [ ] Implement basic neural network from scratch
 - [ ] Train first model and achieve baseline accuracy
 - [ ] Optimize hyperparameters and improve performance
@@ -109,13 +110,19 @@ jupyter notebook notebooks/digit_recognizer.ipynb
 
 </details>
 
-### Phase 3: Data Preprocessing 🔄
+### Phase 3: Data Preprocessing ✅
 <details>
 <summary><strong>Details</strong></summary>
 
-- [ ] Normalize pixel values (0-255 → 0-1)
-- [ ] Split data into train/validation sets (80/20)
-- [ ] Convert to PyTorch tensors
+- [x] Normalize pixel values (0-255 → 0-1)
+- [x] Split data into train/validation sets (80/20)
+- [x] Convert to PyTorch tensors (float32 for features, int64 for labels)
+
+**Key Results:**
+- Training set: 33,600 samples (80%)
+- Validation set: 8,400 samples (20%)
+- Normalized range: [0.0, 1.0], mean: 0.131
+- All tensors ready for neural network training
 
 </details>
 
