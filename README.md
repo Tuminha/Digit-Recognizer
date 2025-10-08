@@ -217,6 +217,12 @@ Final Training Results (10 Epochs):
 
 **Figure 1:** Training progress showing loss and accuracy over 10 epochs. Left: Loss curves demonstrate steady learning. Right: Accuracy curves show strong performance on both training and validation sets.
 
+<br /><br />
+
+<img src="images/kaggle_classification.png" alt="Kaggle Competition Results" width="800" />
+
+**Figure 2:** Kaggle leaderboard submission results showing the model's performance on the test set.
+
 </div>
 
 ---
@@ -233,13 +239,36 @@ Final Training Results (10 Epochs):
 
 ---
 
+## 💾 Trained Model
+
+The trained model and complete documentation are available in the [`trained_models/`](trained_models/) directory:
+
+📁 **Model Files:**
+- [`digit_classifier_model.pth`](trained_models/digit_classifier_model.pth) - Model weights (state_dict)
+- [`digit_classifier_full.pth`](trained_models/digit_classifier_full.pth) - Complete model with architecture
+- [`model_metadata.json`](trained_models/model_metadata.json) - Training configuration and history
+- [`MODEL_CARD.md`](trained_models/MODEL_CARD.md) - **📖 Complete Model Documentation**
+
+**Performance:** 97.01% validation accuracy | ~102K parameters | PyTorch MLP architecture
+
+👉 **[Read Full Model Documentation](trained_models/MODEL_CARD.md)** for architecture details, training configuration, loading instructions, and usage examples.
+
+---
+
 ## 📦 Kaggle Submission
-The notebook will contain a final phase to produce `submission.csv` using the trained model.
 
-### Generate
-- Load test data, apply same preprocessing, make predictions with trained model, save as `submission.csv`
+### Submission Process
+The notebook contains code to automatically generate `submission.csv` using the trained model.
 
-### Validate
+**Steps:**
+1. Load test data (28,000 images)
+2. Apply same preprocessing (normalize 0-1)
+3. Make predictions with trained model
+4. Generate `submission.csv` in Kaggle format
+5. Validate format (ImageId, Label columns)
+6. Upload to Kaggle competition
+
+### Validation
 ```python
 import pandas as pd
 s = pd.read_csv('submission.csv')
@@ -249,9 +278,14 @@ assert s['Label'].dropna().isin(range(10)).all()
 print('Submission looks valid:', s.shape)
 ```
 
-### Upload
-- UI: Kaggle → Digit Recognizer competition → Submit Predictions → upload `submission.csv`
-- CLI (optional): `kaggle competitions submit -c digit-recognizer -f submission.csv -m "First neural network implementation"`
+### Results
+✅ **Submission accepted and scored on Kaggle leaderboard!**  
+📊 See Figure 2 above for competition results  
+🎯 Model successfully generalizes to unseen test data
+
+### Upload Options
+- **UI:** Kaggle → Digit Recognizer competition → Submit Predictions → upload `submission.csv`
+- **CLI:** `kaggle competitions submit -c digit-recognizer -f submission.csv -m "Neural Network (784→128→64→10) - 97% val acc"`
 
 ---
 
