@@ -45,8 +45,8 @@
 - Explore different neural network architectures (MLP, CNN)
 
 ### 🏆 Key Achievements
-- [ ] Set up project structure and environment
-- [ ] Load and explore MNIST dataset
+- [x] Set up project structure and environment
+- [x] Load and explore MNIST dataset
 - [ ] Implement basic neural network from scratch
 - [ ] Train first model and achieve baseline accuracy
 - [ ] Optimize hyperparameters and improve performance
@@ -56,8 +56,9 @@
 
 ## 📊 Dataset / Domain
 - Source: MNIST (Modified National Institute of Standards and Technology)
-- Size: 70,000 handwritten digit images (28x28 pixels)
+- Size: 42,000 training samples (28x28 pixels, 784 features)
 - Target: Classify digits 0-9
+- Distribution: Relatively balanced across all digit classes
 - Competition: [Kaggle Digit Recognizer](https://www.kaggle.com/competitions/digit-recognizer)
 
 ---
@@ -91,19 +92,34 @@ jupyter notebook notebooks/digit_recognizer.ipynb
 
 </details>
 
-### Phase 2: Data Exploration 🔄
+### Phase 2: Data Exploration ✅
 <details>
 <summary><strong>Details</strong></summary>
 
-- [ ] Load MNIST dataset from Kaggle
-- [ ] Explore data shape and distribution
-- [ ] Visualize sample images
-- [ ] Analyze class balance
-- [ ] Prepare train/validation split
+- [x] Load MNIST dataset from Kaggle (42,000 samples)
+- [x] Explore data shape and distribution
+- [x] Visualize sample images in 2x5 grid
+- [x] Analyze class balance (all digits well-represented)
+- [x] Convert features and labels to NumPy arrays
+
+**Key Insights:**
+- Dataset shape: (42000, 785) - 784 pixel features + 1 label
+- Pixel values: 0-255 (grayscale)
+- All 10 digit classes present and balanced
 
 </details>
 
-### Phase 3: Neural Network Implementation 🔄
+### Phase 3: Data Preprocessing 🔄
+<details>
+<summary><strong>Details</strong></summary>
+
+- [ ] Normalize pixel values (0-255 → 0-1)
+- [ ] Split data into train/validation sets (80/20)
+- [ ] Convert to PyTorch tensors
+
+</details>
+
+### Phase 4: Neural Network Implementation 🔄
 <details>
 <summary><strong>Details</strong></summary>
 
@@ -115,7 +131,7 @@ jupyter notebook notebooks/digit_recognizer.ipynb
 
 </details>
 
-### Phase 4: Training Pipeline 🔄
+### Phase 5: Training Pipeline 🔄
 <details>
 <summary><strong>Details</strong></summary>
 
@@ -127,10 +143,10 @@ jupyter notebook notebooks/digit_recognizer.ipynb
 
 </details>
 
-### Phase 5: Model Evaluation 🔄
+### Phase 6: Model Evaluation 🔄
 - Summary: TBD
 
-### Phase 6: Optimization & Submission 🔄
+### Phase 7: Kaggle Submission 🔄
 - Summary: TBD
 
 ---
